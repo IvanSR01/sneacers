@@ -1,0 +1,20 @@
+.myButton {
+	color:#fff;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 14px 0;
+	width: 200px;
+	font-size: 16px;
+	background-color: #A5D364;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	Link{
+		color:#fff;
+	}
+}
+.myButton:hover{
+	background-color: #799b49;
+	transition: all 0.5s;
+}

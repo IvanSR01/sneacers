@@ -1,0 +1,76 @@
+.wrapper{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #06060648;
+	opacity: 1;
+	transition: all 1.5s;
+}
+
+.content{
+	transition: all 1s;
+	padding: 30px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 400px;
+	background-color: #fff;
+	transform: translateX(0px);
+}
+.header {
+	font-size: 30px;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	img{
+		height: 20px;
+		cursor: pointer;
+	}
+}
+.successOrEmpty{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	flex-wrap: wrap;
+	.contentSuccessOrEmpty{
+		width: 300px;
+		text-align: center;
+		.servicesImg{
+			height: 100px;
+		}
+	}
+	.Button {
+		text-decoration: none;
+	}
+
+	button{
+		margin: 20px 40px;
+		text-decoration: none;
+	}
+	span{
+		font-size: 16px;
+		color: #727272;
+		line-height: 24px;
+	}
+	h2{
+		font-size: 20px;
+
+	}
+	// only success 
+	.success{
+		color: #87C20A;
+	}
+}
+.hidden{
+	opacity: 0;
+	position: relative;
+}
+.hiddenContent{
+	transform: translateX(500px);
+	
+}

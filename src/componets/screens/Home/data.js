@@ -1,0 +1,1 @@
+export const data = [{name:'популярности', sorteding: 'rating'}, {name:'цене' , sorteding:"price",} , {name:'алфавиту', sorteding: 'title',}]

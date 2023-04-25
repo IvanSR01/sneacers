@@ -1,0 +1,62 @@
+// Basket
+.productList {
+	height: 650px;
+	overflow-y: scroll;
+}
+.zakaz {
+		padding: 10px;
+		div{
+			margin-top: 20px;
+			font-size: 20px;
+		}
+	.line{
+		width: 190px;
+		height: 0px;
+		display: inline-block;
+		border-bottom: 1px dashed #b0b0b0; 
+	}
+	.price {
+		font-weight: bold;
+	}
+	button{
+		margin-left: 20px;
+		margin-top: 20px;
+		padding: 20px;
+		width: 350px;
+		font-size: 20px;
+	}
+}
+// Product
+.wrapperProduct{
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid #b0b0b0;
+	border-radius: 20px;
+	width: auto;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	.img{
+		height: 70px;
+	}
+	p{
+		margin: 0 0 8px 0;
+		width: 180px;
+	}
+	span{
+		font-weight: bold;
+	}
+	button{
+		background-color: #fff;
+		border: 1px solid #b0b0b0;
+		padding: 10px;
+		border-radius: 10px;
+		cursor: pointer;
+		img{
+			height: 15px;
+		}
+	}
+	button:hover{
+
+	}
+}
