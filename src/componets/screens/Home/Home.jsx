@@ -12,21 +12,22 @@ import styles from "./Home.module.scss";
 import { data } from "./data";
 const Home = () => {
   const dispatch = useDispatch();
-	const { search } = useContext(SearchContext)
+  const { search } = useContext(SearchContext);
   const { items, status } = useSelector((state) => state.get);
-  const { sortValue, descValue } = useSelector(
-    (state) => state.filter
-  );
+  const { sortValue, descValue } = useSelector((state) => state.filter);
   const sortedValue = data[sortValue].sorteding;
   useEffect(() => {
     const fetch = async () => {
-      dispatch(fetchSneckersGet({ sortedValue, descValue}));
+      dispatch(fetchSneckersGet({ sortedValue, descValue }));
     };
     fetch();
   }, [sortValue, descValue]);
-	const buyItem = () => {
-		window.scrollBy(500, 500)
-	}
+  const buyItem = () => {
+    window.scrollTo({
+      top: 700,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className={styles.Home}>
       <div className={styles.stocks}>
@@ -50,7 +51,7 @@ const Home = () => {
           {status === "loading" ? (
             <Loader />
           ) : (
-            <SearchItems items={items} search={search} status={status}/>
+            <SearchItems items={items} search={search} status={status} />
           )}
         </div>
       </div>

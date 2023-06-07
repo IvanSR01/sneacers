@@ -19,7 +19,7 @@ const IsSuccess = ({setIsSuccess}) => {
           src="public/servicesImg/image 8.jpg"
           alt=""
         />
-        <h2>Корзина пустая</h2>
+        <h2>Заказ офромлен</h2>
         <span>
           Ваш заказ #{shopValue} скоро будет передан курьерской доставке
         </span>

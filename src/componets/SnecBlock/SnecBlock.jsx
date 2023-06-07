@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { buyOnClick, removeOnClick,  updateAllCheck} from "../../redux/slices/basketSlice";
 import { likeOnClick, removeLikeOnClick } from "../../redux/slices/likeSlice";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 const SnecBlock = ({ id, title, price, imgUrl, isLiked = false }) => {
   const [isBuy, setIsbuy] = useState(false);
   const [isLike, setIsLike] = useState(false);
@@ -43,7 +44,19 @@ const SnecBlock = ({ id, title, price, imgUrl, isLiked = false }) => {
     }
   };
   return (
-    <div className={styles.wrapper}>
+		<motion.div 
+		initial={{
+			y: '120px',
+			opacity:0
+		}}
+		animate={{
+			y:'0px',
+			opacity:1,
+		}}
+		transition={{
+			duration: 1
+		}}
+		className={styles.wrapper}>
       <button
         onClick={() => onClickLike()}
         className={`${styles.likes} ${isLike ? styles.isLike : ""}`}
@@ -79,7 +92,7 @@ const SnecBlock = ({ id, title, price, imgUrl, isLiked = false }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
