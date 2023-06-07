@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import styles from "./SnecBlock.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { buyOnClick, removeOnClick,  updateAllCheck} from "../../redux/slices/basketSlice";
+import {
+  buyOnClick,
+  removeOnClick,
+  updateAllCheck,
+} from "../../redux/slices/basketSlice";
 import { likeOnClick, removeLikeOnClick } from "../../redux/slices/likeSlice";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 const SnecBlock = ({ id, title, price, imgUrl, isLiked = false }) => {
   const [isBuy, setIsbuy] = useState(false);
   const [isLike, setIsLike] = useState(false);
-  const buyValue = useSelector((state) => state.basket.checkValue)
+  const {items,buyValue } = useSelector((state) => state.basket);
+  const item = {
+    id,
+    title,
+    price,
+    imgUrl,
+  };
   const dispatch = useDispatch();
   useEffect(() => {
     if (isLiked) {
@@ -17,13 +27,11 @@ const SnecBlock = ({ id, title, price, imgUrl, isLiked = false }) => {
     if (buyValue) {
       setIsbuy(false);
     }
-  }, [isLiked, buyValue]);
-  const item = {
-    id,
-    title,
-    price,
-    imgUrl,
-  };
+		const findItem = items.find((el) => el.id === item.id);
+		if(findItem){
+			setIsbuy(true)
+		}
+  }, [items, isLiked, buyValue]);
   const onClickLike = () => {
     if (isLike) {
       dispatch(removeLikeOnClick(item));
@@ -44,19 +52,20 @@ const SnecBlock = ({ id, title, price, imgUrl, isLiked = false }) => {
     }
   };
   return (
-		<motion.div 
-		initial={{
-			y: '120px',
-			opacity:0
-		}}
-		animate={{
-			y:'0px',
-			opacity:1,
-		}}
-		transition={{
-			duration: 1
-		}}
-		className={styles.wrapper}>
+    <motion.div
+      initial={{
+        y: "120px",
+        opacity: 0,
+      }}
+      animate={{
+        y: "0px",
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      className={styles.wrapper}
+    >
       <button
         onClick={() => onClickLike()}
         className={`${styles.likes} ${isLike ? styles.isLike : ""}`}
