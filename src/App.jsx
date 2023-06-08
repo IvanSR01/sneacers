@@ -13,13 +13,13 @@ function App() {
   const [search, setSearch] = useState("");
   return (
     <div className="body">
-      <SearchContext.Provider value={{search, setSearch}}>
+      <SearchContext.Provider value={{ search, setSearch }}>
         <Header />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Like" element={<Like />} />
-						<Route path="/Orders" element={<OrderHistory />} />
+            <Route path="/Orders" element={<OrderHistory />} />
             <Route path="*" element={<NotFount />} />
           </Routes>
         </div>
