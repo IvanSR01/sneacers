@@ -1,0 +1,40 @@
+// base
+.wrapper{
+	flex-wrap: wrap;
+	margin-top: 40px;
+	min-height: 700px;
+	display: flex;
+	gap: 70px;
+	
+}
+.header {
+	margin: 40px 0 20px 0px;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+// Not Like
+.ntlWrapper{
+	height: 640px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	button{
+		background-color: #9d45c3;
+	}
+	.ntlContent{
+		text-align: center;
+		h2{
+			margin: 6px;
+		}
+		p{
+			color: #a4a4a4;
+			margin-bottom: 60px;
+		}
+		button{
+			margin: auto;
+			padding: 18px;
+		}
+	}
+}

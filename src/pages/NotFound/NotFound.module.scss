@@ -1,0 +1,19 @@
+.wrapper{
+	color: #383838;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	padding: 150px;
+	font-size: 50px;
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		width: 600px;
+		gap: 20px;
+		justify-content: center;
+		button{
+			font-size: 20px;
+			background-color: #9d45c3;
+		}
+	}
+}
