@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface IFilter {
 	sortValue: number,
-	orderValue: boolean
+	orderValue: boolean,
 }
 const initialState: IFilter = {
 	sortValue: 0,
